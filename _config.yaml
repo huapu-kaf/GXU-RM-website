@@ -1,7 +1,7 @@
 # site properties and page defaults
-title: 狼牙战队
+title: huapu-kafDESCRIPTION=An engaging 1-3 sentence description of your lab.
 subtitle: 
-description: 华中科技大学 RoboMaster 狼牙战队
+description: 
 header: images/background.jpg
 header-video: images/bgvideo.mp4
 footer: images/background.jpg
@@ -9,8 +9,8 @@ proofer: false
 slogan: 一往无前华科行，气壮山河狼牙名
 # site social media and other links
 links:
-  email: hustrobomaster@163.com
-  github: HUSTLYRM
+  email: contact@huapu-kafDESCRIPTION=An engaging 1-3 sentence description of your lab..com
+  github: huapu-kafDESCRIPTION=An engaging 1-3 sentence description of your lab.
   bilibili: "475402455"
   wechat: https://mp.weixin.qq.com/s/Zrk4PRRGSimJG9bVDj3Zsg
 ## jekyll settings

@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{% capture floatcontent %}
+
+{% include portrait.html lookup=page.slug %}
+
+{% assign member = site.members
+  | where_exp: "member", "member.slug == page.slug"
+  | first
+  | default: include
+%}
+
+
+<div>
+  {% for link in page.links %}
+    {% assign key = link[0] %}
+    {% assign value = link[1] %}
+    {% include button.html type=key link=value style="bare" %}<br>
+  {% endfor %}
+</div>
+
+
+
+{% endcapture %}
+
+{% include float.html content=floatcontent %}
+
+{{ content }}
+{% include section.html %}
+{% assign filter_string = "members:" | append: member.name %}
+
+{% if member.award %}
+<h1>荣誉成就</h1>
+{% include list.html data="awards" component="awards" filters=filter_string type="full" style="rich" %} 
+{% include section.html %}
+{% endif %}
+
+
+{% assign aliases = page.aliases
+  | default: page.name
+  | default: page.title
+  | join: ","
+  | split: ","
+  | array_filter
+%}
+
+{% capture search -%}
+  research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}
+{%- endcapture %}
+
+
+
+{% capture search -%}
+  blog/?search={{ page.name }}
+{%- endcapture %}
+
+<p class="center">
+  <a href="{{ search | relative_url }}">
+    查看 {{ page.name | default: page.title }}  发布的博文
+  </a>
+</p>
+ 
